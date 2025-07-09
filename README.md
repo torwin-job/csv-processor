@@ -29,11 +29,15 @@ python main.py --file data.csv
 python main.py --file data.csv --where "price>500"
 ```
 
+![Фильтрация](img/1.png)
+
 ### 3. Агрегация (например, среднее значение по цене)
 
 ```bash
 python main.py --file data.csv --aggregate "price=avg"
 ```
+
+![Агрегация](img/2.png)
 
 Возможные агрегации: `avg`, `min`, `max`.
 
@@ -49,6 +53,8 @@ python main.py --file data.csv --order-by price:desc
 ```bash
 python main.py --file data.csv --where "price>500" --order-by name:asc
 ```
+
+![Фильтр+Сортировка](img/3.png)
 
 Запустите тесты командой из корня проекта:
 
