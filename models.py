@@ -18,5 +18,4 @@ class CSVRow:
         except KeyError:
             raise AttributeError(key)
 
-    """Модель строки CSV. Пока наследует dict, но может быть расширена."""
     pass
