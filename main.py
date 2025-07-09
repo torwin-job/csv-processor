@@ -17,8 +17,12 @@ def main() -> None:
     )
     args = parser.parse_args()
 
-    reader: CSVReader = CSVReader(args.file)
-    rows: list = reader.read()
+    try:
+        reader: CSVReader = CSVReader(args.file)
+        rows: list = reader.read()
+    except Exception as e:
+        print(f"Ошибка чтения файла: {e}", file=sys.stderr)
+        sys.exit(1)
 
     # Сортировка до агрегации и вывода
     if args.where:
@@ -41,6 +45,9 @@ def main() -> None:
             else:
                 column = args.order_by.strip()
                 direction = "asc"
+            if direction not in ("asc", "desc"):
+                print(f"Ошибка сортировки: направление должно быть 'asc' или 'desc', а не '{direction}'", file=sys.stderr)
+                sys.exit(1)
             reverse = direction == "desc"
             filtered = sorted(filtered, key=lambda row: row[column], reverse=reverse)
         except Exception as e:
