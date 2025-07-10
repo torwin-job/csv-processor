@@ -1,13 +1,10 @@
-import sys
 import os
 import tempfile
 import pytest
 from csv_reader import CSVReader
 from factory import FilterFactory, AggregationFactory
 
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
-import pytest
 
 TEST_CSV = """name,price,qty
 apple,100,5
