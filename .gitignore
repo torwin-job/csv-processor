@@ -20,6 +20,8 @@ lib64/
 parts/
 sdist/
 var/
+pyproject.toml
+pyrightconfig.json
 *.egg-info/
 .installed.cfg
 *.egg
