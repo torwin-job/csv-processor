@@ -5,7 +5,6 @@ from csv_reader import CSVReader
 from factory import FilterFactory, AggregationFactory
 
 
-
 TEST_CSV = """name,price,qty
 apple,100,5
 banana,50,10

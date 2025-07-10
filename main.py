@@ -46,7 +46,10 @@ def main() -> None:
                 column = args.order_by.strip()
                 direction = "asc"
             if direction not in ("asc", "desc"):
-                print(f"Ошибка сортировки: направление должно быть 'asc' или 'desc', а не '{direction}'", file=sys.stderr)
+                print(
+                    f"Ошибка сортировки: направление должно быть 'asc' или 'desc', а не '{direction}'",
+                    file=sys.stderr,
+                )
                 sys.exit(1)
             reverse = direction == "desc"
             filtered = sorted(filtered, key=lambda row: row[column], reverse=reverse)
