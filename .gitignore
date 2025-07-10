@@ -2,7 +2,7 @@
 __pycache__/
 *.py[cod]
 *$py.class
-
+.venv
 # C extensions
 *.so
 
@@ -71,4 +71,4 @@ coverage.xml
 *~
 
 # CSV test data
-*.csv 
+*.csv
