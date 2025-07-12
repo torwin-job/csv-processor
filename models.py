@@ -8,6 +8,7 @@ class CSVRow:
     Класс-обертка для строки CSV.
     Позволяет обращаться к данным как по ключу, так и через атрибуты.
     """
+
     data: dict[str, Any] = field(default_factory=dict)
 
     def __getitem__(self, key):

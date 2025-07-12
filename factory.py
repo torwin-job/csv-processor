@@ -6,6 +6,7 @@ class FilterFactory:
     """
     Фабрика для создания фильтров по строковой спецификации.
     """
+
     @staticmethod
     def create(where: str) -> Filter:
         """
@@ -33,6 +34,7 @@ class AggregationFactory:
     """
     Фабрика для создания агрегаторов по строковой спецификации.
     """
+
     @staticmethod
     def create(aggregate: str) -> tuple[str, Aggregation]:
         """

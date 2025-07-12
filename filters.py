@@ -8,6 +8,7 @@ class Filter(ABC):
     Абстрактный базовый класс для фильтров.
     Определяет интерфейс для фильтрации строк CSV.
     """
+
     @abstractmethod
     def apply(self, row: dict[str, Any] | CSVRow) -> bool:
         """
@@ -49,6 +50,7 @@ class EqualFilter(Filter):
     """
     Фильтр для проверки равенства значения в колонке.
     """
+
     def __init__(self, column: str, value: Any) -> None:
         """
         Инициализация фильтра.

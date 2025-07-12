@@ -7,6 +7,7 @@ class Aggregation(ABC):
     Абстрактный базовый класс для агрегаторов.
     Определяет интерфейс для агрегирующих функций над списком чисел.
     """
+
     @abstractmethod
     def aggregate(self, values: list[float]) -> Any:
         """
@@ -24,6 +25,7 @@ class AvgAggregation(Aggregation):
     """
     Агрегатор для вычисления среднего значения.
     """
+
     def aggregate(self, values: list[float]) -> float | None:
         """
         Вычисляет среднее значение списка.
@@ -40,6 +42,7 @@ class MinAggregation(Aggregation):
     """
     Агрегатор для поиска минимального значения.
     """
+
     def aggregate(self, values: list[float]) -> float:
         """
         Находит минимальное значение в списке.
@@ -56,6 +59,7 @@ class MaxAggregation(Aggregation):
     """
     Агрегатор для поиска максимального значения.
     """
+
     def aggregate(self, values: list[float]) -> float:
         """
         Находит максимальное значение в списке.

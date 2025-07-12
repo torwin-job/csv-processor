@@ -6,6 +6,7 @@ class CSVReader:
     """
     Класс для чтения CSV-файлов и преобразования их в объекты CSVRow.
     """
+
     def __init__(self, file_path: str) -> None:
         """
         Инициализация CSVReader.
