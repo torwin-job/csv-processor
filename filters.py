@@ -1,11 +1,11 @@
 from abc import ABC, abstractmethod
-from typing import Any, Dict, Union
+from typing import Any
 from models import CSVRow
 
 
 class Filter(ABC):
     @abstractmethod
-    def apply(self, row: Union[Dict[str, Any], CSVRow]) -> bool:
+    def apply(self, row: dict[str, Any] | CSVRow) -> bool:
         pass
 
 
@@ -14,7 +14,7 @@ class GreaterThanFilter(Filter):
         self.column: str = column
         self.value: float = value
 
-    def apply(self, row: Union[Dict[str, Any], CSVRow]) -> bool:
+    def apply(self, row: dict[str, Any] | CSVRow) -> bool:
         try:
             return float(row[self.column]) > self.value
         except Exception:
@@ -26,7 +26,7 @@ class LessThanFilter(Filter):
         self.column: str = column
         self.value: float = value
 
-    def apply(self, row: Union[Dict[str, Any], CSVRow]) -> bool:
+    def apply(self, row: dict[str, Any] | CSVRow) -> bool:
         try:
             return float(row[self.column]) < self.value
         except Exception:
@@ -38,7 +38,7 @@ class EqualFilter(Filter):
         self.column: str = column
         self.value: Any = value
 
-    def apply(self, row: Union[Dict[str, Any], CSVRow]) -> bool:
+    def apply(self, row: dict[str, Any] | CSVRow) -> bool:
         try:
             return str(row[self.column]) == str(self.value)
         except Exception:
